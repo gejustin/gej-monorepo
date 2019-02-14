@@ -4,11 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
 import { RouterModule } from '@angular/router';
-class Test {}
+
 @NgModule({
-    declarations: [AppComponent, Test],
+    declarations: [AppComponent],
     imports: [
-        BrowserModule,
+        BrowserModule.withServerTransition({ appId: 'dmd' }),
         NxModule.forRoot(),
         RouterModule.forRoot([], { initialNavigation: 'enabled' }),
     ],

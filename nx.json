@@ -1,31 +1,30 @@
 {
-  "npmScope": "gej",
-  "implicitDependencies": {
-    "angular.json": "*",
-    "package.json": "*",
-    "tsconfig.json": "*",
-    "tslint.json": "*",
-    "nx.json": "*"
-  },
-  "projects": {
-    "danamarinodesign": {
-      "tags": [
-        "dmd"
-      ]
+    "npmScope": "gej",
+    "implicitDependencies": {
+        "angular.json": "*",
+        "package.json": "*",
+        "tsconfig.json": "*",
+        "tslint.json": "*",
+        "nx.json": "*"
     },
-    "danamarinodesign-e2e": {
-      "tags": []
-    },
-    "garyjust-in": {
-      "tags": [
-        "gej"
-      ]
-    },
-    "garyjust-in-e2e": {
-      "tags": []
-    },
-    "web-api": {
-      "tags": []
+    "projects": {
+        "danamarinodesign": {
+            "tags": ["dmd"]
+        },
+        "danamarinodesign-e2e": {
+            "tags": []
+        },
+        "garyjust-in": {
+            "tags": ["gej"]
+        },
+        "garyjust-in-e2e": {
+            "tags": []
+        },
+        "web-api": {
+            "tags": []
+        },
+        "ngx-ssr": {
+            "tags": []
+        }
     }
-  }
 }

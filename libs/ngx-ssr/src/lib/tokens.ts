@@ -1,0 +1,1 @@
+export const UNIVERSAL_CONFIG = 'UNIVERSAL_CONFIG';
