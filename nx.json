@@ -7,5 +7,25 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "danamarinodesign": {
+      "tags": [
+        "dmd"
+      ]
+    },
+    "danamarinodesign-e2e": {
+      "tags": []
+    },
+    "garyjust-in": {
+      "tags": [
+        "gej"
+      ]
+    },
+    "garyjust-in-e2e": {
+      "tags": []
+    },
+    "web-api": {
+      "tags": []
+    }
+  }
 }
