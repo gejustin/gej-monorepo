@@ -92,7 +92,7 @@
                     "options": {
                         "outputPath": "dist/apps/danamarinodesign/server",
                         "main": "apps/danamarinodesign/src/main.server.ts",
-                        "tsConfig": "apps/danamarinodesign/tsconfig.server.json",
+                        "tsConfig": "apps/danamarinodesign/tsconfig.server.json"
                     },
                     "configurations": {
                         "production": {
