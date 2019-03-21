@@ -1,346 +1,308 @@
 {
-    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-    "version": 1,
-    "newProjectRoot": "",
-    "projects": {
-        "danamarinodesign": {
-            "root": "apps/danamarinodesign/",
-            "sourceRoot": "apps/danamarinodesign/src",
-            "projectType": "application",
-            "prefix": "gej",
-            "schematics": {
-                "@nrwl/schematics:component": {
-                    "style": "scss"
-                }
-            },
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-angular:browser",
-                    "options": {
-                        "outputPath": "dist/apps/danamarinodesign/browser",
-                        "index": "apps/danamarinodesign/src/index.html",
-                        "main": "apps/danamarinodesign/src/main.ts",
-                        "polyfills": "apps/danamarinodesign/src/polyfills.ts",
-                        "tsConfig": "apps/danamarinodesign/tsconfig.app.json",
-                        "assets": [
-                            "apps/danamarinodesign/src/favicon.ico",
-                            "apps/danamarinodesign/src/assets"
-                        ],
-                        "styles": ["apps/danamarinodesign/src/styles.scss"],
-                        "scripts": []
-                    },
-                    "configurations": {
-                        "production": {
-                            "fileReplacements": [{
-                                "replace": "apps/danamarinodesign/src/environments/environment.ts",
-                                "with": "apps/danamarinodesign/src/environments/environment.prod.ts"
-                            }],
-                            "optimization": true,
-                            "outputHashing": "all",
-                            "sourceMap": false,
-                            "extractCss": true,
-                            "namedChunks": false,
-                            "aot": true,
-                            "extractLicenses": true,
-                            "vendorChunk": false,
-                            "buildOptimizer": true,
-                            "budgets": [{
-                                "type": "initial",
-                                "maximumWarning": "2mb",
-                                "maximumError": "5mb"
-                            }]
-                        }
-                    }
-                },
-                "serve": {
-                    "builder": "@angular-devkit/build-angular:dev-server",
-                    "options": {
-                        "browserTarget": "danamarinodesign:build"
-                    },
-                    "configurations": {
-                        "production": {
-                            "browserTarget": "danamarinodesign:build:production"
-                        }
-                    }
-                },
-                "extract-i18n": {
-                    "builder": "@angular-devkit/build-angular:extract-i18n",
-                    "options": {
-                        "browserTarget": "danamarinodesign:build"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "apps/danamarinodesign/tsconfig.app.json",
-                            "apps/danamarinodesign/tsconfig.spec.json"
-                        ],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                },
-                "test": {
-                    "builder": "@nrwl/builders:jest",
-                    "options": {
-                        "jestConfig": "apps/danamarinodesign/jest.config.js",
-                        "tsConfig": "apps/danamarinodesign/tsconfig.spec.json",
-                        "setupFile": "apps/danamarinodesign/src/test-setup.ts"
-                    }
-                },
-                "server": {
-                    "builder": "@angular-devkit/build-angular:server",
-                    "options": {
-                        "outputPath": "dist/apps/danamarinodesign/server",
-                        "main": "apps/danamarinodesign/src/main.server.ts",
-                        "tsConfig": "apps/danamarinodesign/tsconfig.server.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "fileReplacements": [{
-                                "replace": "apps/danamarinodesign/src/environments/environment.ts",
-                                "with": "apps/danamarinodesign/src/environments/environment.prod.ts"
-                            }]
-                        }
-                    }
-                }
-            }
-        },
-        "danamarinodesign-e2e": {
-            "root": "apps/danamarinodesign-e2e",
-            "projectType": "application",
-            "prefix": "",
-            "architect": {
-                "e2e": {
-                    "builder": "@angular-devkit/build-angular:protractor",
-                    "options": {
-                        "protractorConfig": "apps/danamarinodesign-e2e/protractor.conf.js",
-                        "devServerTarget": "danamarinodesign:serve"
-                    },
-                    "configurations": {
-                        "production": {
-                            "devServerTarget": "danamarinodesign:serve:production"
-                        }
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": "apps/danamarinodesign-e2e/tsconfig.e2e.json",
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "garyjust-in": {
-            "root": "apps/garyjust-in/",
-            "sourceRoot": "apps/garyjust-in/src",
-            "projectType": "application",
-            "prefix": "gej",
-            "schematics": {
-                "@nrwl/schematics:component": {
-                    "style": "scss"
-                }
-            },
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-angular:browser",
-                    "options": {
-                        "outputPath": "dist/apps/garyjust-in",
-                        "index": "apps/garyjust-in/src/index.html",
-                        "main": "apps/garyjust-in/src/main.ts",
-                        "polyfills": "apps/garyjust-in/src/polyfills.ts",
-                        "tsConfig": "apps/garyjust-in/tsconfig.app.json",
-                        "assets": [
-                            "apps/garyjust-in/src/favicon.ico",
-                            "apps/garyjust-in/src/assets"
-                        ],
-                        "styles": ["apps/garyjust-in/src/styles.scss"],
-                        "scripts": []
-                    },
-                    "configurations": {
-                        "production": {
-                            "fileReplacements": [{
-                                "replace": "apps/garyjust-in/src/environments/environment.ts",
-                                "with": "apps/garyjust-in/src/environments/environment.prod.ts"
-                            }],
-                            "optimization": true,
-                            "outputHashing": "all",
-                            "sourceMap": false,
-                            "extractCss": true,
-                            "namedChunks": false,
-                            "aot": true,
-                            "extractLicenses": true,
-                            "vendorChunk": false,
-                            "buildOptimizer": true,
-                            "budgets": [{
-                                "type": "initial",
-                                "maximumWarning": "2mb",
-                                "maximumError": "5mb"
-                            }]
-                        }
-                    }
-                },
-                "serve": {
-                    "builder": "@angular-devkit/build-angular:dev-server",
-                    "options": {
-                        "browserTarget": "garyjust-in:build"
-                    },
-                    "configurations": {
-                        "production": {
-                            "browserTarget": "garyjust-in:build:production"
-                        }
-                    }
-                },
-                "extract-i18n": {
-                    "builder": "@angular-devkit/build-angular:extract-i18n",
-                    "options": {
-                        "browserTarget": "garyjust-in:build"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "apps/garyjust-in/tsconfig.app.json",
-                            "apps/garyjust-in/tsconfig.spec.json"
-                        ],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                },
-                "test": {
-                    "builder": "@nrwl/builders:jest",
-                    "options": {
-                        "jestConfig": "apps/garyjust-in/jest.config.js",
-                        "tsConfig": "apps/garyjust-in/tsconfig.spec.json",
-                        "setupFile": "apps/garyjust-in/src/test-setup.ts"
-                    }
-                }
-            }
-        },
-        "garyjust-in-e2e": {
-            "root": "apps/garyjust-in-e2e",
-            "projectType": "application",
-            "prefix": "",
-            "architect": {
-                "e2e": {
-                    "builder": "@angular-devkit/build-angular:protractor",
-                    "options": {
-                        "protractorConfig": "apps/garyjust-in-e2e/protractor.conf.js",
-                        "devServerTarget": "garyjust-in:serve"
-                    },
-                    "configurations": {
-                        "production": {
-                            "devServerTarget": "garyjust-in:serve:production"
-                        }
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": "apps/garyjust-in-e2e/tsconfig.e2e.json",
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "web-api": {
-            "root": "apps/web-api",
-            "sourceRoot": "apps/web-api/src",
-            "projectType": "application",
-            "prefix": "web-api",
-            "schematics": {},
-            "architect": {
-                "build": {
-                    "builder": "@nrwl/builders:node-build",
-                    "options": {
-                        "outputPath": "dist/apps/web-api",
-                        "main": "apps/web-api/src/main.ts",
-                        "tsConfig": "apps/web-api/tsconfig.app.json",
-                        "assets": ["apps/web-api/src/assets"]
-                    },
-                    "configurations": {
-                        "production": {
-                            "optimization": true,
-                            "extractLicenses": true,
-                            "inspect": false,
-                            "fileReplacements": [{
-                                "replace": "apps/web-api/src/environments/environment.ts",
-                                "with": "apps/web-api/src/environments/environment.prod.ts"
-                            }]
-                        }
-                    }
-                },
-                "serve": {
-                    "builder": "@nrwl/builders:node-execute",
-                    "options": {
-                        "buildTarget": "web-api:build"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "apps/web-api/tsconfig.app.json",
-                            "apps/web-api/tsconfig.spec.json"
-                        ],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                },
-                "test": {
-                    "builder": "@nrwl/builders:jest",
-                    "options": {
-                        "jestConfig": "apps/web-api/jest.config.js",
-                        "tsConfig": "apps/web-api/tsconfig.spec.json"
-                    }
-                }
-            }
-        },
-        "ngx-ssr": {
-            "root": "libs/ngx-ssr",
-            "sourceRoot": "libs/ngx-ssr/src",
-            "projectType": "library",
-            "prefix": "gej",
-            "architect": {
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "libs/ngx-ssr/tsconfig.lib.json",
-                            "libs/ngx-ssr/tsconfig.spec.json"
-                        ],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                },
-                "test": {
-                    "builder": "@nrwl/builders:jest",
-                    "options": {
-                        "jestConfig": "libs/ngx-ssr/jest.config.js",
-                        "tsConfig": "libs/ngx-ssr/tsconfig.spec.json"
-                    }
-                }
-            },
-            "schematics": {
-                "@nrwl/schematics:component": {
-                    "styleext": "scss"
-                }
-            }
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "dmd-com": {
+      "root": "apps/dmd-com/",
+      "sourceRoot": "apps/dmd-com/src",
+      "projectType": "application",
+      "prefix": "gej",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
         }
-    },
-    "cli": {
-        "warnings": {
-            "typescriptMismatch": false,
-            "versionMismatch": false
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/dmd-com/browser",
+            "index": "apps/dmd-com/src/index.html",
+            "main": "apps/dmd-com/src/main.ts",
+            "polyfills": "apps/dmd-com/src/polyfills.ts",
+            "tsConfig": "apps/dmd-com/tsconfig.app.json",
+            "assets": [
+              "apps/dmd-com/src/favicon.ico",
+              "apps/dmd-com/src/assets"
+            ],
+            "styles": [
+              "apps/dmd-com/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/dmd-com/src/environments/environment.ts",
+                  "with": "apps/dmd-com/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
         },
-        "defaultCollection": "@nrwl/schematics",
-        "packageManager": "npm"
-    },
-    "schematics": {
-        "@nrwl/schematics:application": {
-            "style": "scss"
+        "serve": {
+          "builder": "@nrwl/builders:node-execute",
+          "options": {
+            "buildTarget": "dmd-com:build-webserver",
+            "inspect": false,
+            "waitUntilTargets": [
+              "dmd-com:build",
+              "dmd-com:server"
+            ]
+          }
         },
-        "@nrwl/schematics:library": {
-            "style": "scss"
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "dmd-com:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/dmd-com/tsconfig.app.json",
+              "apps/dmd-com/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/dmd-com/jest.config.js",
+            "tsConfig": "apps/dmd-com/tsconfig.spec.json",
+            "setupFile": "apps/dmd-com/src/test-setup.ts"
+          }
+        },
+        "build-webserver": {
+          "builder": "@nrwl/builders:node-build",
+          "options": {
+            "outputPath": "dist/apps/dmd-com",
+            "main": "apps/dmd-com/server.ts",
+            "tsConfig": "apps/dmd-com/tsconfig.server.json",
+            "externalDependencies": "all"
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/web-api/src/environments/environment.ts",
+                  "with": "apps/web-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/apps/dmd-com/server",
+            "main": "apps/dmd-com/src/main.server.ts",
+            "tsConfig": "apps/dmd-com/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/dmd-com/src/environments/environment.ts",
+                  "with": "apps/dmd-com/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
         }
+      }
     },
-    "defaultProject": "danamarinodesign"
+    "web-api": {
+      "root": "apps/web-api",
+      "sourceRoot": "apps/web-api/src",
+      "projectType": "application",
+      "prefix": "web-api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/builders:node-build",
+          "options": {
+            "outputPath": "dist/apps/web-api",
+            "main": "apps/web-api/src/main.ts",
+            "tsConfig": "apps/web-api/tsconfig.app.json",
+            "assets": [
+              "apps/web-api/src/assets"
+            ],
+            "externalDependencies": "all"
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/web-api/src/environments/environment.ts",
+                  "with": "apps/web-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/builders:node-execute",
+          "options": {
+            "buildTarget": "web-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/web-api/tsconfig.app.json",
+              "apps/web-api/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/web-api/jest.config.js",
+            "tsConfig": "apps/web-api/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "ngx-ssr": {
+      "root": "libs/nestjs/ngx-ssr",
+      "sourceRoot": "libs/nestjs/ngx-ssr/src",
+      "projectType": "library",
+      "prefix": "gej",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/nestjs/ngx-ssr/tsconfig.lib.json",
+              "libs/nestjs/ngx-ssr/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/nestjs/ngx-ssr/jest.config.js",
+            "tsConfig": "libs/nestjs/ngx-ssr/tsconfig.spec.json"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "dmd-webserver": {
+      "root": "apps/dmd-webserver",
+      "sourceRoot": "apps/dmd-webserver/src",
+      "projectType": "application",
+      "prefix": "dmd-webserver",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/builders:node-build",
+          "options": {
+            "outputPath": "dist/apps/dmd-com",
+            "main": "apps/dmd-webserver/src/main.ts",
+            "tsConfig": "apps/dmd-webserver/tsconfig.app.json",
+            "assets": [
+              "apps/dmd-webserver/src/assets"
+            ],
+            "waitUntilTargets": ["dmd-com:server"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/dmd-webserver/src/environments/environment.ts",
+                  "with": "apps/dmd-webserver/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/builders:node-execute",
+          "options": {
+            "buildTarget": "dmd-webserver:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/dmd-webserver/tsconfig.app.json",
+              "apps/dmd-webserver/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/dmd-webserver/jest.config.js",
+            "tsConfig": "apps/dmd-webserver/tsconfig.spec.json"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
+    "defaultCollection": "@nrwl/schematics",
+    "packageManager": "npm"
+  },
+  "schematics": {
+    "@nrwl/schematics:application": {
+      "style": "scss"
+    },
+    "@nrwl/schematics:library": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "dmd-com"
 }

@@ -13,7 +13,7 @@
         "lib": ["es2017", "dom"],
         "baseUrl": ".",
         "paths": {
-            "@gej/ngx-ssr": ["libs/ngx-ssr/src/index.ts"]
+            "@gej/ngx-ssr": ["libs/nestjs/ngx-ssr/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]

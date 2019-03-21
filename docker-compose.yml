@@ -1,0 +1,33 @@
+version: '2'
+services:
+  base:
+    image: node:10
+    volumes:
+      - .:/usr/src/:delegated
+    working_dir: /usr/src/
+    environment:
+      - NODE_ENV=development
+#   install:
+#     extends:
+#       service: base
+#     command: npm install
+  build-dmd-client:
+    extends:
+      service: base
+    command: npm run build:dmd-client -- --watch
+  build-dmd-server:
+    extends:
+      service: base
+    command: npm run build:dmd-server -- --watch
+  start-dmd-webserver:
+    extends:
+      service: base
+    ports:
+      - 4200:4200
+    command: npm run start:dmd-webserver
+  start-web-api:
+    extends:
+      service: base
+    ports:
+      - 3000:3000
+    command: npm run start:web-api
