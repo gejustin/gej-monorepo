@@ -13,18 +13,14 @@
         "dmd"
       ]
     },
-    "web-api": {
-      "tags": []
+    "dmd-api": {
+      "tags": [],
+      "implicitDependencies": [
+          "dmd-api"
+      ]
     },
     "ngx-ssr": {
       "tags": []
-    },
-    "dmd-webserver": {
-      "tags": [],
-      "implicitDependencies": [
-          "dmd-com",
-          "web-api"
-      ]
     }
   }
 }

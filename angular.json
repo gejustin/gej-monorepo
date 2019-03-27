@@ -110,8 +110,8 @@
               "inspect": false,
               "fileReplacements": [
                 {
-                  "replace": "apps/web-api/src/environments/environment.ts",
-                  "with": "apps/web-api/src/environments/environment.prod.ts"
+                  "replace": "apps/dmd-api/src/environments/environment.ts",
+                  "with": "apps/dmd-api/src/environments/environment.prod.ts"
                 }
               ]
             }
@@ -137,21 +137,21 @@
         }
       }
     },
-    "web-api": {
-      "root": "apps/web-api",
-      "sourceRoot": "apps/web-api/src",
+    "dmd-api": {
+      "root": "apps/dmd-api",
+      "sourceRoot": "apps/dmd-api/src",
       "projectType": "application",
-      "prefix": "web-api",
+      "prefix": "dmd-api",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@nrwl/builders:node-build",
           "options": {
-            "outputPath": "dist/apps/web-api",
-            "main": "apps/web-api/src/main.ts",
-            "tsConfig": "apps/web-api/tsconfig.app.json",
+            "outputPath": "dist/apps/dmd-api",
+            "main": "apps/dmd-api/src/main.ts",
+            "tsConfig": "apps/dmd-api/tsconfig.app.json",
             "assets": [
-              "apps/web-api/src/assets"
+              "apps/dmd-api/src/assets"
             ],
             "externalDependencies": "all"
           },
@@ -162,8 +162,8 @@
               "inspect": false,
               "fileReplacements": [
                 {
-                  "replace": "apps/web-api/src/environments/environment.ts",
-                  "with": "apps/web-api/src/environments/environment.prod.ts"
+                  "replace": "apps/dmd-api/src/environments/environment.ts",
+                  "with": "apps/dmd-api/src/environments/environment.prod.ts"
                 }
               ]
             }
@@ -172,15 +172,15 @@
         "serve": {
           "builder": "@nrwl/builders:node-execute",
           "options": {
-            "buildTarget": "web-api:build"
+            "buildTarget": "dmd-api:build"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/web-api/tsconfig.app.json",
-              "apps/web-api/tsconfig.spec.json"
+              "apps/dmd-api/tsconfig.app.json",
+              "apps/dmd-api/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -190,8 +190,8 @@
         "test": {
           "builder": "@nrwl/builders:jest",
           "options": {
-            "jestConfig": "apps/web-api/jest.config.js",
-            "tsConfig": "apps/web-api/tsconfig.spec.json"
+            "jestConfig": "apps/dmd-api/jest.config.js",
+            "tsConfig": "apps/dmd-api/tsconfig.spec.json"
           }
         }
       }
@@ -225,65 +225,6 @@
       "schematics": {
         "@nrwl/schematics:component": {
           "styleext": "scss"
-        }
-      }
-    },
-    "dmd-webserver": {
-      "root": "apps/dmd-webserver",
-      "sourceRoot": "apps/dmd-webserver/src",
-      "projectType": "application",
-      "prefix": "dmd-webserver",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/builders:node-build",
-          "options": {
-            "outputPath": "dist/apps/dmd-com",
-            "main": "apps/dmd-webserver/src/main.ts",
-            "tsConfig": "apps/dmd-webserver/tsconfig.app.json",
-            "assets": [
-              "apps/dmd-webserver/src/assets"
-            ],
-            "waitUntilTargets": ["dmd-com:server"]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/dmd-webserver/src/environments/environment.ts",
-                  "with": "apps/dmd-webserver/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/builders:node-execute",
-          "options": {
-            "buildTarget": "dmd-webserver:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/dmd-webserver/tsconfig.app.json",
-              "apps/dmd-webserver/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/builders:jest",
-          "options": {
-            "jestConfig": "apps/dmd-webserver/jest.config.js",
-            "tsConfig": "apps/dmd-webserver/tsconfig.spec.json"
-          }
         }
       }
     }

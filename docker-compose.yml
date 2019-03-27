@@ -19,15 +19,9 @@ services:
     extends:
       service: base
     command: npm run build:dmd-server -- --watch
-  start-dmd-webserver:
-    extends:
-      service: base
-    ports:
-      - 4200:4200
-    command: npm run start:dmd-webserver
-  start-web-api:
+  start-dmd-api:
     extends:
       service: base
     ports:
       - 3000:3000
-    command: npm run start:web-api
+    command: npm run start:dmd-api

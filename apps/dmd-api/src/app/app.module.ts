@@ -11,7 +11,7 @@ const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`/usr/src/dist/app
  */
 if (process.env.NODE_ENV === 'development') {
     const chokidar = require('chokidar');
-    const watcher = chokidar.watch(`/usr/src/dist/apps/dmd-com/server/**/*`);
+    const watcher = chokidar.watch(`/usr/src/dist/apps/dmd-com/server/*`);
 
     watcher.on('change', () => {
         Object.keys(require.cache).forEach(id => {
