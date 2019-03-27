@@ -8,10 +8,10 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app/app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  await app.listen(4200, () => {
-    console.log('Listening at http://localhost:4200');
-  });
+    const app = await NestFactory.create(AppModule);
+    await app.listen(4200, () => {
+        console.log('Listening at http://localhost:4200');
+    });
 }
 
 bootstrap();

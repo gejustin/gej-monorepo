@@ -15,7 +15,7 @@ import { createNgxSsrController } from './ngx-ssr.controller';
 export class NgxSsrModule {
     constructor(
         @Inject(UNIVERSAL_CONFIG) { publicDirPath }: UniversalConfig,
-        { applicationRef }: ApplicationReferenceHost,
+        { applicationRef }: ApplicationReferenceHost
     ) {
         const app: express.Express = applicationRef;
 
@@ -26,7 +26,7 @@ export class NgxSsrModule {
         app.use(
             express.static(publicDirPath, {
                 index: false,
-            }),
+            })
         );
 
         app.engine('html', ngExpressEngine({} as any));
